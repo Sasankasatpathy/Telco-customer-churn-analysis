@@ -58,7 +58,7 @@ The dashboard was built using the Telco Customer Churn dataset containing over 7
 
 ## 1️⃣ Executive Dashboard
 
-![Executive Dashboard](Images/Executive_Dashboard.png)
+![Executive Dashboard](Executive_Dashboard.png)
 
 ### Highlights
 
@@ -80,7 +80,7 @@ Month-to-month contract customers exhibit significantly higher churn rates compa
 
 ## 2️⃣ Customer Analysis Dashboard
 
-![Customer Analysis](Images/Customer_Analysis.png)
+![Customer Analysis](Customer_Analysis.png)
 
 ### Highlights
 
@@ -98,7 +98,7 @@ Customers without partners and senior citizens show a higher tendency to churn.
 
 ## 3️⃣ Service Analysis Dashboard
 
-![Service Analysis](Images/Service_Analysis.png)
+![Service Analysis](Service_Analysis.png)
 
 ### Highlights
 
@@ -116,7 +116,7 @@ Customers without Tech Support and Online Security services have significantly h
 
 ## 4️⃣ Revenue Dashboard
 
-![Revenue Dashboard](Images/Revenue_Dashboard.png)
+![Revenue Dashboard](Revenue_Dashboard.png)
 
 ### Highlights
 
@@ -256,7 +256,7 @@ Telco-customer-churn-analysis/
 
 # 👨‍💻 Author
 
-**Sasanka Satpathy**
+**Sasanka Sekhar Satpathy**
 
 Aspiring Data Analyst
 
