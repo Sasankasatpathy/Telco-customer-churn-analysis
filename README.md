@@ -1,49 +1,301 @@
- 1. Environment Setup (Cells 0–2)
-      -Purpose: Install required libraries (pandas, numpy, matplotlib, seaborn, scikit-learn) and mount Google Drive to access the dataset.
-      -Summary: Prepares the notebook to read data and perform analysis.
+# 📊 Telco Customer Churn Analysis | Power BI
 
- 2. Data Loading & Preview (Cells 3–4)
-      -Code: Loads the dataset costumer churn.csv.csv using pandas and displays the first 10 rows.
-      -Summary: Confirms the dataset is correctly read into a DataFrame (df) and gives a preview of the data structure.
+## 🚀 Project Overview
 
- 3. Data Cleaning (Cells 5–7)
-     Tasks:
-      -Replaces empty strings in TotalCharges with "0".
-      -Converts TotalCharges from object to float.
-      -Checks for null values using isnull().sum().sum().
-      -Summary: Ensures numerical fields are in the correct format and that the data is clean (no nulls).
+Customer churn is one of the most critical challenges in the telecommunications industry. Retaining existing customers is significantly more cost-effective than acquiring new ones. This project analyzes customer churn behavior using Power BI to identify high-risk customer segments, uncover churn drivers, and provide actionable business recommendations.
 
- 4. Data Inspection (Cells 8–9)
-      -Code: Uses df.describe() for statistics and df.duplicated().sum() to check for duplicate rows.
-      -Summary: Confirms dataset quality by checking distributions and duplicates.
+The dashboard enables stakeholders to monitor customer retention, evaluate revenue impact, and make data-driven decisions to reduce churn.
 
- 5. Data Preprocessing (Cells 10–13)
-      -Checked for duplicate customer IDs.
-      -Transformed SeniorCitizen from numeric (0/1) to categorical ("yes"/"no") for better readability.
-      -Previewed updated dataset.
+---
 
- 6. Churn Distribution Analysis (Cells 14–16)
-      -Countplot of Churn shows the number of customers who stayed vs. left.
-      -Pie Chart reveals that ~26.54% of customers have churned.
+## 🎯 Business Objective
 
- 7. Demographic Analysis (Cells 17–20)
-      -Gender vs. Churn: No strong difference in churn by gender.
-      -SeniorCitizen vs. Churn:
-      -Countplot and stacked bar chart indicate higher churn among senior citizens.
+The primary objectives of this project are:
 
- 8. Tenure Impact (Cells 21–22)
-      -Histogram of Tenure by Churn shows that:
-      -Customers with low tenure (1–2 months) are more likely to churn.
-      -Long-tenured customers tend to stay.
+* Analyze customer churn patterns.
+* Identify key factors influencing customer attrition.
+* Quantify revenue loss due to churn.
+* Segment high-risk customer groups.
+* Provide retention-focused business recommendations.
 
- 9. Contract Type Analysis (Cells 23–24)
-      -Customers on month-to-month contracts are significantly more likely to churn than those on yearly plans.
+---
 
- 10. Payment Method Insights (Cells 27–28)
-       -Churn is higher among those paying via Electronic Check compared to credit card, mailed check, or bank transfer.
+## 📁 Dataset Information
 
- 11. Categorical Feature Preparation (Cell 26)
-       -Lists categorical features like:
-       -'PhoneService', 'InternetService', 'StreamingTV', etc.
-       -Likely setup for batch visualization (e.g., subplots of countplots).
+### Dataset Summary
 
+| Metric          | Value              |
+| --------------- | ------------------ |
+| Total Records   | 7,043              |
+| Total Features  | 21                 |
+| Industry        | Telecommunications |
+| Target Variable | Churn              |
+
+### Key Features
+
+* Customer Demographics
+* Contract Type
+* Internet Service
+* Payment Method
+* Monthly Charges
+* Total Charges
+* Tenure
+* Additional Service Subscriptions
+* Churn Status
+
+---
+
+## 🛠️ Tools & Technologies
+
+* Power BI Desktop
+* Power Query
+* DAX
+* Data Modeling
+* Data Visualization
+* Business Analytics
+
+---
+
+## 📋 Data Preparation
+
+### Data Cleaning
+
+* Handled missing values in Total Charges
+* Converted data types
+* Created Tenure Groups
+* Verified data consistency
+* Optimized model relationships
+
+### Feature Engineering
+
+Created customer tenure segments:
+
+| Segment               | Tenure       |
+| --------------------- | ------------ |
+| New Customers         | 0-12 Months  |
+| Growing Customers     | 13-24 Months |
+| Established Customers | 25-48 Months |
+| Loyal Customers       | 49+ Months   |
+
+---
+
+# 📊 Dashboard Pages
+
+## 1️⃣ Executive Summary
+
+### KPIs
+
+* Total Customers
+* Active Customers
+* Churned Customers
+* Churn Rate
+* Revenue Lost
+* ARPU (Average Revenue Per User)
+
+### Visuals
+
+* Churn by Contract Type
+* Churn by Internet Service
+* Churn by Payment Method
+
+---
+
+## 2️⃣ Customer Analysis
+
+### Visuals
+
+* Churn by Gender
+* Churn by Senior Citizen
+* Churn by Dependents
+* Churn by Partner Status
+
+Purpose:
+
+* Understand customer demographics contributing to churn.
+
+---
+
+## 3️⃣ Service Analysis
+
+### Visuals
+
+* Churn by Online Security
+* Churn by Tech Support
+* Churn by Device Protection
+* Churn by Streaming Services
+
+Purpose:
+
+* Identify service-related churn drivers.
+
+---
+
+## 4️⃣ Revenue Analysis
+
+### Visuals
+
+* Revenue by Contract Type
+* Revenue by Internet Service
+* Monthly Charges vs Churn
+* Revenue Lost by Customer Segment
+
+Purpose:
+
+* Evaluate the financial impact of churn.
+
+---
+
+## 5️⃣ Advanced Analytics
+
+### Decomposition Tree
+
+Analyze churn by:
+
+* Contract Type
+* Internet Service
+* Payment Method
+* Tech Support
+
+### Key Influencers
+
+Identify the strongest factors contributing to churn.
+
+Purpose:
+
+* Discover root causes behind customer attrition.
+
+---
+
+# 📈 DAX Measures
+
+### Total Customers
+
+```DAX
+Total Customers =
+COUNT(Telecom[customerID])
+```
+
+### Churned Customers
+
+```DAX
+Churned Customers =
+CALCULATE(
+    COUNT(Telecom[customerID]),
+    Telecom[Churn] = "Yes"
+)
+```
+
+### Active Customers
+
+```DAX
+Active Customers =
+[Total Customers] - [Churned Customers]
+```
+
+### Churn Rate %
+
+```DAX
+Churn Rate % =
+DIVIDE(
+    [Churned Customers],
+    [Total Customers]
+)
+```
+
+### Revenue Lost
+
+```DAX
+Revenue Lost =
+CALCULATE(
+    SUM(Telecom[MonthlyCharges]),
+    Telecom[Churn] = "Yes"
+)
+```
+
+### ARPU
+
+```DAX
+ARPU =
+DIVIDE(
+    SUM(Telecom[MonthlyCharges]),
+    [Total Customers]
+)
+```
+
+---
+
+# 🔍 Key Insights
+
+### Customer Behavior
+
+* Month-to-month contract customers have the highest churn rate.
+* Customers with lower tenure are more likely to churn.
+* Senior citizens show higher churn behavior compared to other segments.
+
+### Service Insights
+
+* Customers without online security exhibit higher churn.
+* Lack of tech support increases churn risk.
+* Fiber optic customers churn more frequently than DSL users.
+
+### Revenue Impact
+
+* Customer churn contributes significantly to revenue loss.
+* High-value customers generate a disproportionate share of lost revenue.
+
+---
+
+# 💡 Recommendations
+
+1. Encourage customers to switch from month-to-month to long-term contracts.
+2. Bundle Online Security and Tech Support services.
+3. Launch targeted retention campaigns for new customers.
+4. Create loyalty programs for high-value customers.
+5. Offer personalized discounts to high-risk segments.
+
+---
+
+# 📸 Dashboard Preview
+
+Add dashboard screenshots here:
+
+```markdown
+![Executive Dashboard](Images/Executive_Dashboard.png)
+
+![Customer Analysis](Images/Customer_Analysis.png)
+
+![Revenue Analysis](Images/Revenue_Analysis.png)
+```
+
+---
+
+# 📂 Repository Structure
+
+```text
+Telco-customer-churn-analysis/
+│
+├── Data/
+│   └── customer_churn.csv
+│
+├── Dashboard/
+│   └── Telecom_Churn_Dashboard.pbix
+│
+├── Images/
+│   ├── Executive_Dashboard.png
+│   ├── Customer_Analysis.png
+│   └── Revenue_Analysis.png
+│
+└── README.md
+```
+
+---
+
+# 👨‍💻 Author
+
+**Sasanka Satpathy**
+
+Aspiring Data Analyst | SQL | Power BI | Python | Excel | Statistics
+
+LinkedIn: Add your LinkedIn profile here
+
+GitHub: https://github.com/Sasankasatpathy
