@@ -1,47 +1,20 @@
-# 📊 Telco Customer Churn Analysis | Power BI
+# 📊 Telco Customer Churn Analysis Dashboard
 
 ## 🚀 Project Overview
 
-Customer churn is one of the most critical challenges in the telecommunications industry. Retaining existing customers is significantly more cost-effective than acquiring new ones. This project analyzes customer churn behavior using Power BI to identify high-risk customer segments, uncover churn drivers, and provide actionable business recommendations.
+Customer churn is a major challenge in the telecommunications industry. This project uses Power BI to analyze customer churn patterns, identify key factors influencing customer attrition, measure revenue impact, and provide actionable recommendations to improve customer retention.
 
-The dashboard enables stakeholders to monitor customer retention, evaluate revenue impact, and make data-driven decisions to reduce churn.
-
----
-
-## 🎯 Business Objective
-
-The primary objectives of this project are:
-
-* Analyze customer churn patterns.
-* Identify key factors influencing customer attrition.
-* Quantify revenue loss due to churn.
-* Segment high-risk customer groups.
-* Provide retention-focused business recommendations.
+The dashboard was built using the Telco Customer Churn dataset containing over 7,000 customer records and multiple customer, service, and billing attributes.
 
 ---
 
-## 📁 Dataset Information
+## 🎯 Business Objectives
 
-### Dataset Summary
-
-| Metric          | Value              |
-| --------------- | ------------------ |
-| Total Records   | 7,043              |
-| Total Features  | 21                 |
-| Industry        | Telecommunications |
-| Target Variable | Churn              |
-
-### Key Features
-
-* Customer Demographics
-* Contract Type
-* Internet Service
-* Payment Method
-* Monthly Charges
-* Total Charges
-* Tenure
-* Additional Service Subscriptions
-* Churn Status
+* Identify the primary drivers of customer churn.
+* Analyze customer demographics and service usage.
+* Quantify revenue loss caused by churn.
+* Segment high-risk customers.
+* Generate actionable retention strategies.
 
 ---
 
@@ -49,124 +22,117 @@ The primary objectives of this project are:
 
 * Power BI Desktop
 * Power Query
-* DAX
+* DAX (Data Analysis Expressions)
 * Data Modeling
 * Data Visualization
 * Business Analytics
 
 ---
 
-## 📋 Data Preparation
+## 📂 Dataset Information
 
-### Data Cleaning
+| Metric          | Value              |
+| --------------- | ------------------ |
+| Records         | 7,043              |
+| Features        | 21                 |
+| Industry        | Telecommunications |
+| Target Variable | Churn              |
 
-* Handled missing values in Total Charges
-* Converted data types
-* Created Tenure Groups
-* Verified data consistency
-* Optimized model relationships
+### Key Features
 
-### Feature Engineering
-
-Created customer tenure segments:
-
-| Segment               | Tenure       |
-| --------------------- | ------------ |
-| New Customers         | 0-12 Months  |
-| Growing Customers     | 13-24 Months |
-| Established Customers | 25-48 Months |
-| Loyal Customers       | 49+ Months   |
+* Gender
+* Senior Citizen
+* Partner
+* Dependents
+* Tenure
+* Internet Service
+* Contract Type
+* Payment Method
+* Monthly Charges
+* Total Charges
+* Churn
 
 ---
 
-# 📊 Dashboard Pages
+# 📸 Dashboard Preview
 
-## 1️⃣ Executive Summary
+## 1️⃣ Executive Dashboard
 
-### KPIs
+![Executive Dashboard](Images/Executive_Dashboard.png)
+
+### Highlights
 
 * Total Customers
-* Active Customers
 * Churned Customers
-* Churn Rate
+* Active Customers
+* Churn Rate %
 * Revenue Lost
 * ARPU (Average Revenue Per User)
-
-### Visuals
-
 * Churn by Contract Type
 * Churn by Internet Service
 * Churn by Payment Method
 
+### Key Insight
+
+Month-to-month contract customers exhibit significantly higher churn rates compared to long-term contract customers.
+
 ---
 
-## 2️⃣ Customer Analysis
+## 2️⃣ Customer Analysis Dashboard
 
-### Visuals
+![Customer Analysis](Images/Customer_Analysis.png)
+
+### Highlights
 
 * Churn by Gender
-* Churn by Senior Citizen
 * Churn by Dependents
+* Churn by Senior Citizen
 * Churn by Partner Status
+* Interactive Customer Segmentation Filters
 
-Purpose:
+### Key Insight
 
-* Understand customer demographics contributing to churn.
-
----
-
-## 3️⃣ Service Analysis
-
-### Visuals
-
-* Churn by Online Security
-* Churn by Tech Support
-* Churn by Device Protection
-* Churn by Streaming Services
-
-Purpose:
-
-* Identify service-related churn drivers.
+Customers without partners and senior citizens show a higher tendency to churn.
 
 ---
 
-## 4️⃣ Revenue Analysis
+## 3️⃣ Service Analysis Dashboard
 
-### Visuals
+![Service Analysis](Images/Service_Analysis.png)
 
+### Highlights
+
+* Tech Support Impact
+* Online Security Impact
+* Device Protection Impact
+* Streaming TV Impact
+* Service-Level Churn Analysis
+
+### Key Insight
+
+Customers without Tech Support and Online Security services have significantly higher churn rates.
+
+---
+
+## 4️⃣ Revenue Dashboard
+
+![Revenue Dashboard](Images/Revenue_Dashboard.png)
+
+### Highlights
+
+* Revenue Lost by Payment Method
+* Monthly Charges vs Churn
 * Revenue by Contract Type
 * Revenue by Internet Service
-* Monthly Charges vs Churn
-* Revenue Lost by Customer Segment
+* Revenue-Based Customer Analysis
 
-Purpose:
+### Key Insight
 
-* Evaluate the financial impact of churn.
-
----
-
-## 5️⃣ Advanced Analytics
-
-### Decomposition Tree
-
-Analyze churn by:
-
-* Contract Type
-* Internet Service
-* Payment Method
-* Tech Support
-
-### Key Influencers
-
-Identify the strongest factors contributing to churn.
-
-Purpose:
-
-* Discover root causes behind customer attrition.
+Electronic Check customers contribute the highest share of revenue loss due to churn.
 
 ---
 
-# 📈 DAX Measures
+# 📈 DAX Measures Used
 
 ### Total Customers
 
@@ -224,52 +190,49 @@ DIVIDE(
 
 ---
 
-# 🔍 Key Insights
+# 🔍 Key Business Insights
 
-### Customer Behavior
+### Customer Insights
 
-* Month-to-month contract customers have the highest churn rate.
-* Customers with lower tenure are more likely to churn.
-* Senior citizens show higher churn behavior compared to other segments.
+* Month-to-month contract customers are most likely to churn.
+* New customers (0–12 months tenure) exhibit the highest churn rates.
+* Senior citizens are more likely to leave the service.
 
 ### Service Insights
 
-* Customers without online security exhibit higher churn.
-* Lack of tech support increases churn risk.
-* Fiber optic customers churn more frequently than DSL users.
+* Lack of Tech Support significantly increases churn risk.
+* Customers without Online Security churn more frequently.
+* Fiber optic customers experience higher churn compared to DSL users.
 
-### Revenue Impact
+### Revenue Insights
 
-* Customer churn contributes significantly to revenue loss.
-* High-value customers generate a disproportionate share of lost revenue.
+* Churn leads to substantial monthly revenue loss.
+* Electronic Check payment users represent the highest revenue risk.
+* Long-term contract customers contribute more stable revenue.
 
 ---
 
 # 💡 Recommendations
 
-1. Encourage customers to switch from month-to-month to long-term contracts.
-2. Bundle Online Security and Tech Support services.
-3. Launch targeted retention campaigns for new customers.
-4. Create loyalty programs for high-value customers.
-5. Offer personalized discounts to high-risk segments.
+### Customer Retention
+
+* Encourage migration from month-to-month to long-term contracts.
+* Offer loyalty rewards for customers reaching tenure milestones.
+* Target high-risk customers with personalized retention offers.
+
+### Service Improvement
+
+* Bundle Tech Support and Online Security with internet plans.
+* Promote value-added services to improve customer stickiness.
+
+### Revenue Protection
+
+* Monitor high-value customers proactively.
+* Implement churn prediction alerts for at-risk customers.
 
 ---
 
-# 📸 Dashboard Preview
-
-Add dashboard screenshots here:
-
-```markdown
-![Executive Dashboard](Images/Executive_Dashboard.png)
-
-![Customer Analysis](Images/Customer_Analysis.png)
-
-![Revenue Analysis](Images/Revenue_Analysis.png)
-```
-
----
-
-# 📂 Repository Structure
+# 📁 Repository Structure
 
 ```text
 Telco-customer-churn-analysis/
@@ -283,7 +246,8 @@ Telco-customer-churn-analysis/
 ├── Images/
 │   ├── Executive_Dashboard.png
 │   ├── Customer_Analysis.png
-│   └── Revenue_Analysis.png
+│   ├── Service_Analysis.png
+│   └── Revenue_Dashboard.png
 │
 └── README.md
 ```
@@ -294,8 +258,19 @@ Telco-customer-churn-analysis/
 
 **Sasanka Satpathy**
 
-Aspiring Data Analyst | SQL | Power BI | Python | Excel | Statistics
+Aspiring Data Analyst
 
-LinkedIn: https://www.linkedin.com/in/sasanka-sekhar-satpathy-6b5b83232/
+### Skills
+
+* SQL
+* Power BI
+* Excel
+* Python
+* Statistics
+* Data Visualization
 
 GitHub: https://github.com/Sasankasatpathy
+
+---
+
+⭐ If you found this project useful, consider giving the repository a star.
