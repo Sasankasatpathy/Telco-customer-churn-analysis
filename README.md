@@ -296,6 +296,6 @@ Telco-customer-churn-analysis/
 
 Aspiring Data Analyst | SQL | Power BI | Python | Excel | Statistics
 
-LinkedIn: Add your LinkedIn profile here
+LinkedIn: https://www.linkedin.com/in/sasanka-sekhar-satpathy-6b5b83232/
 
 GitHub: https://github.com/Sasankasatpathy
